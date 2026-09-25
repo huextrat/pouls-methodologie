@@ -1,6 +1,6 @@
 {
   "name": "pouls-methodologie",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Moteur public et reproductible d’agrégation des sondages utilisé par Pouls.",
   "license": "MIT",
   "repository": {

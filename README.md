@@ -119,6 +119,11 @@ const trend = buildTrend(
 Les fonctions exportées sont pures : elles reçoivent des données et renvoient
 un résultat sans accès réseau ni écriture sur le disque.
 
+`parseFeed` et `RawFeedSchema` acceptent le JSON MieuxVoter actuel (objet contenant
+un tableau `polls`) ainsi que l'ancien format (tableau à la racine). Ils renvoient
+tous deux un tableau de sondages validés. Les métadonnées de l'enveloppe ne sont
+pas utilisées dans le calcul ; un sondage invalide fait échouer tout le flux.
+
 ## Développement
 
 ```bash

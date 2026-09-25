@@ -21,6 +21,13 @@ résultat partiel ou silencieusement altéré.
 Les champs supplémentaires sont tolérés pour rester compatible avec les ajouts
 non cassants de la source.
 
+Depuis la version 0.1.1, l'entrée accepte aussi l'enveloppe introduite par
+MieuxVoter le 21 septembre 2026 : le tableau de sondages est extrait du champ
+`polls`, puis validé intégralement. L'ancien tableau à la racine reste accepté.
+Les métadonnées de l'enveloppe n'interviennent pas dans l'agrégation. Cette
+compatibilité ne change aucun résultat à sondages et date de calcul identiques,
+y compris pour les snapshots historiques.
+
 ## Agrégat du premier tour
 
 ### 1. Fenêtre glissante adaptative

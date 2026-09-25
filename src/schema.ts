@@ -28,7 +28,13 @@ export const RawPollSchema = z
   })
   .passthrough();
 
-export const RawFeedSchema = z.array(RawPollSchema);
+/** Accept historical arrays and the envelope introduced by MieuxVoter on 2026-09-21. */
+export const RawFeedSchema = z.preprocess((data) => {
+  if (data !== null && typeof data === "object" && !Array.isArray(data) && "polls" in data) {
+    return data.polls;
+  }
+  return data;
+}, z.array(RawPollSchema));
 
 export type RawCandidate = z.infer<typeof RawCandidateSchema>;
 export type RawPoll = z.infer<typeof RawPollSchema>;
